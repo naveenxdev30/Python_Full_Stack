@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
 
     <style>
@@ -43,6 +46,11 @@
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
         }
 
         .error {
@@ -65,11 +73,7 @@
         <p class="error">{{ error }}</p>
     {% endif %}
 
-    {% if success %}
-        <p class="success">{{ success }}</p>
-    {% endif %}
-
-    <form method="POST">
+    <form method="POST" action="{% url 'register' %}">
 
         {% csrf_token %}
 
